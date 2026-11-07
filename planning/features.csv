@@ -1,0 +1,46 @@
+feature,area,priority,original,clone,notes,source
+Public shop page with seller about block,storefront,must,yes,no,S01,observed
+Product page with title price description media,product,must,yes,no,S02,observed
+Animated preview media on product page,product,should,yes,no,GIF preview seen,observed
+"Included files, requirements, license summary sections",product,must,yes,no,S02 structure,observed
+Buy Now one-step button,checkout,must,yes,no,checkout steps not observed,observed
+Add to cart and cart drawer,cart,must,yes,no,S05 incl. error state,observed
+Wishlist toggle,product,should,yes,no,login requirement unknown,observed
+Header search with results view,discovery,must,yes,no,not exercised,observed
+Contact form to seller,support,must,yes,no,S03,observed
+Cookie consent banner,compliance,must,yes,no,Reject/Accept,observed
+Buyer login,accounts,must,yes,no,S04 not opened,observed
+Already-owned product detection,accounts,should,yes,no,"""already in your library""",observed
+Purchase-gated reviews via receipt email,reviews,should,yes,no,S08,observed
+Email follow/subscribe,marketing,could,yes,no,S01,observed
+Payment brand strip in footer,trust,could,yes,no,,observed
+Share product control,product,could,yes,no,,observed
+Instant ZIP delivery after payment,delivery,must,yes,no,stated on product page,observed
+Receipt email with download page link,delivery,must,yes,no,stated in review dialog,observed
+Buyer download page,delivery,must,yes,no,S09 unseen,observed
+Per-product license text,licensing,must,yes,no,personal-use license in ZIP,observed
+Application-then-checkout approval products,checkout,could,unknown,no,only message text seen,observed
+License key generation,licensing,must,unverified,no,reported by third parties,platform
+Download limits and expiring links,delivery,must,unverified,no,verify in Payhip docs,platform
+Coupons,marketing,should,unverified,no,API reported to cover coupons,platform
+Affiliates,marketing,could,unverified,no,,platform
+EU VAT handling,tax,should,unverified,no,legal pages exist; seller of record,platform
+PayPal and Stripe checkout,payments,must,yes,no,Stripe/PayPal availability in Egypt unverified,platform
+"Free/Plus/Pro fee tiers (5%/2%/0%)",business,could,unverified,no,pricing per third parties,platform
+Category navigation and product catalog,discovery,must,no,no,not in reference,brief
+Advanced filters and sorting,discovery,must,no,no,not in reference,brief
+Ratings and reviews display,reviews,must,no,no,not visible in reference,brief
+Customer accounts and purchase history,accounts,must,partial,no,,brief
+Order tracking,orders,should,no,no,,brief
+Support center,support,should,no,no,,brief
+Seller dashboard (products versions pricing discounts),seller,must,unverified,no,not observable publicly,brief
+Seller sales revenue and conversion stats,seller,should,unverified,no,,brief
+Seller refund management,seller,should,no,no,,brief
+Admin dashboard and analytics,admin,must,no,no,,brief
+Product approval and moderation,admin,must,no,no,security-critical for code uploads,brief
+Audit logs and RBAC,admin,must,no,no,,brief
+Arabic and English with RTL,i18n,must,no,no,,brief
+Multi-vendor payouts,marketplace,could,no,no,phase two; payments from Egypt unresolved,brief
+JIN2 product content and branding,content,skip,yes,skip,copyrighted; not cloneable,observed
+Payhip brand code and network,platform,skip,yes,skip,owned by Payhip,platform
+Payment licence / merchant of record status,regulated,skip,yes,skip,regulated; use a licensed provider,platform

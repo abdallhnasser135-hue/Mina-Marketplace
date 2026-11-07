@@ -1,0 +1,46 @@
+feature,area,priority,source,tier,milestone,note
+Public shop page with seller about block,storefront,must,observed,MVP,M6,About/brand page + home hero; no seller page in v1
+Product page with title price description media,product,must,observed,MVP,M2,Product detail page
+Animated preview media on product page,product,should,observed,MVP,M2,GIF/video preview via product_media (public bucket)
+"Included files, requirements, license summary sections",product,must,observed,MVP,M2,"Included files, requirements, compat from product_versions + editions + license_templates"
+Buy Now one-step button,checkout,must,observed,MVP,M3,Buy-now = cart with one item then /api/checkout
+Add to cart and cart drawer,cart,must,observed,MVP,M3,"carts, cart_items"
+Wishlist toggle,product,should,observed,MVP,M3,wishlist_items
+Header search with results view,discovery,must,observed,MVP,M2,FTS (simple config) + pg_trgm; Arabic limits noted in architecture.md
+Contact form to seller,support,must,observed,MVP,M6,/api/contact -> support_tickets
+Cookie consent banner,compliance,must,observed,MVP,M6,Consent only for non-essential cookies; analytics is cookieless
+Buyer login,accounts,must,observed,MVP,M3,Supabase Auth
+Already-owned product detection,accounts,should,observed,MVP,M3,POST /cart/items rejects owned editions via entitlements
+Purchase-gated reviews via receipt email,reviews,should,observed,MVP,M6,reviews.entitlement_id NOT NULL enforces verified purchase
+Email follow/subscribe,marketing,could,observed,MVP,M6,"newsletter_subscribers, double opt-in"
+Payment brand strip in footer,trust,could,observed,MVP,M2,Show only methods verified with the provider
+Share product control,product,could,observed,MVP,M2,Share control
+Instant ZIP delivery after payment,delivery,must,observed,MVP,M1,Vertical slice: webhook -> entitlement -> presigned download
+Receipt email with download page link,delivery,must,observed,MVP,M1,email_outbox template order_receipt
+Buyer download page,delivery,must,observed,MVP,M3,/library + /api/downloads/:fileId/link
+Per-product license text,licensing,must,observed,MVP,M2,license_templates + product_editions.license_template_id
+Application-then-checkout approval products,checkout,could,observed,V2,-,Request-access flow for enterprise/team licenses
+License key generation,licensing,must,platform,MVP,M1,licenses table; HMAC + AES-GCM
+Download limits and expiring links,delivery,must,platform,MVP,M1,download_events + link TTL + daily limit setting
+Coupons,marketing,should,platform,MVP,M5,"coupons, coupon_targets, coupon_redemptions"
+Affiliates,marketing,could,platform,V2,-,Affiliate tracking not needed for launch
+EU VAT handling,tax,should,platform,MVP,M4,Handled by merchant-of-record provider if approved; otherwise own tax obligation (open item)
+PayPal and Stripe checkout,payments,must,platform,MVP,M4,"Via provider hosted checkout; card/PayPal availability to be verified, not assumed"
+Free/Plus/Pro fee tiers (5%/2%/0%),business,could,platform,N/A,-,No sellers in v1; fee tiers are a platform-vendor concept
+Category navigation and product catalog,discovery,must,brief,MVP,M2,"categories + category_translations, 14 seeded"
+Advanced filters and sorting,discovery,must,brief,MVP,M2,"Filters: category, tag, tech, price, rating; sorts"
+Ratings and reviews display,reviews,must,brief,MVP,M6,reviews + products.rating_avg trigger
+Customer accounts and purchase history,accounts,must,brief,MVP,M3,"users, orders, order_items"
+Order tracking,orders,should,brief,MVP,M3,orders.status + /orders/:n/status
+Support center,support,should,brief,MVP,M6,support_tickets + FAQ pages
+Seller dashboard (products versions pricing discounts),seller,must,brief,MVP,M5,Merged into admin: platform vendor is the only seller in v1; separate seller UI is FUTURE
+Seller sales revenue and conversion stats,seller,should,brief,MVP,M5,analytics_daily + orders; per-product
+Seller refund management,seller,should,brief,MVP,M5,refunds via admin; no seller UI
+Admin dashboard and analytics,admin,must,brief,MVP,M5,Admin dashboard
+Product approval and moderation,admin,must,brief,MVP,M5,product status workflow draft->in_review->published; scan_status gate
+Audit logs and RBAC,admin,must,brief,MVP,M5,roles/permissions/user_roles + audit_logs + RLS
+Arabic and English with RTL,i18n,must,brief,MVP,M0,"next-intl, logical CSS, dir attr, translation tables"
+Multi-vendor payouts,marketplace,could,brief,FUTURE,-,schema_future.sql; order_items fee columns already present
+JIN2 product content and branding,content,skip,observed,SKIP,-,Original content is not ours
+Payhip brand code and network,platform,skip,platform,SKIP,-,Payhip IP
+Payment licence / merchant of record status,regulated,skip,platform,SKIP,-,Use a licensed provider
